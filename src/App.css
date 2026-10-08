@@ -1,4 +1,9 @@
 @import "bootstrap/dist/css/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
+
+.bi {
+  color: #fff;
+}
 
 #root {
   max-width: 1280px;
