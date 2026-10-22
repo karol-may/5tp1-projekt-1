@@ -1,27 +1,21 @@
 import { useParams } from "react-router";
 import { users } from "../data/user";
 
-function UserShowPage() {
-    const { id } = useParams();
+function UserShowPage(){
 
-    if (!id) {
-        return <p>Nie podano ID użytkownika!</p>;
-    }
+    let {id} = useParams();
 
-    const user = users.find(user => user.id === Number(id));
+    if (!id) {return "Brak ID użytkownika!";}
 
-    if (!user) {
-        return <p>Nie znaleziono użytkownika!</p>;
-    }
+    let user = users.find((v)=> v.id === Number(id))
+
+    if (!user) {return "Nie ma takiego typa!";}
 
     return (
-        <div>
-            <p>{user.id}</p>
-            <p>{user.name}</p>
-            <p>{user.surname}</p>
-            <p>{user.email}</p>
-        </div>
+    <div>
+        {user.id} {user.name}
+    </div>
     );
 }
 
-export {UserShowPage}
+export {UserShowPage};
