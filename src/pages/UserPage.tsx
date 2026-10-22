@@ -25,8 +25,8 @@ function UserPage(){
                             <td>{v.email}</td>
                             <td className="d-flex gap-1">
                                 <NavLink to={"/user/"+v.id} className="btn btn-sm btn-info"><i className="bi bi-eye-fill"></i></NavLink>
-                                <NavLink to={"/user/"+v.id} className="btn btn-sm btn-primary"><i className="bi bi-pencil-fill"></i></NavLink>
-                                <NavLink to={"/user/"+v.id} className="btn btn-sm btn-danger"><i className="bi bi-trash-fill"></i></NavLink>
+                                <NavLink to={"/user/"+v.id+"/edit"} className="btn btn-sm btn-primary"><i className="bi bi-pencil-fill"></i></NavLink>
+                                <NavLink to={"/user/"+v.id+"/delete"} className="btn btn-sm btn-danger"><i className="bi bi-trash-fill"></i></NavLink>
                             </td>
                         </tr>
                         )
