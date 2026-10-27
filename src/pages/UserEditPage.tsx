@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import { users } from "../data/user";
 import { useState } from "react";
+import type { UserType } from "../types/UserType";
 
 function UserEditPage(){
 
@@ -8,15 +9,15 @@ function UserEditPage(){
 
     if (!id) {return "Brak ID użytkownika!";}
 
-    let user = users.find((v)=> v.id === Number(id))
+    let user: UserType|undefined = users.find((v)=> v.id === Number(id))
 
     if (!user) {return "Nie ma takiego typa!";}
 
-    let [formData, setFormData] = useState(user);
+    let [formData, setFormData] = useState<UserType>(user);
 
     function formDataChangeHandler(e:any){
         let {name, value} = e.target;
-        setFormData({...user, [name]:value}); // utworzyć typ UserType // użycie "?"
+        setFormData(prev => ({...prev, [name]: value}));
     }
 
     return (

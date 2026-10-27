@@ -1,4 +1,6 @@
-    let users = [
+import type { UserType } from "../types/UserType"
+
+    let users: UserType[] = [
         {
             id: 1,
             name: "Karol",
